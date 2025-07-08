@@ -1,1 +1,97 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f8ff; /* 明るい背景色 */
+    color: #333;
+    text-align: center;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 90%;
+    border: 2px solid #add8e6; /* 明るいボーダー */
+}
+
+h1 {
+    font-size: 2.8em;
+    color: #1e90ff; /* 青系のメインカラー */
+    margin-bottom: 20px;
+    animation: bounceIn 1s ease-out; /* アプリ起動時のアニメーション */
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+#weather-info p {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: #555;
+}
+
+#warning-message {
+    font-size: 1.8em;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    color: #fff; /* 文字色は白に */
+    transition: background-color 0.5s ease; /* 色変更のアニメーション */
+}
+
+/* 警告レベルごとの色 */
+.level-safe { background-color: #28a745; } /* 緑 */
+.level-caution { background-color: #ffc107; } /* 黄色 */
+.level-warning { background-color: #fd7e14; } /* オレンジ */
+.level-danger { background-color: #dc3545; } /* 赤 */
+
+#advice-message {
+    font-size: 1.3em;
+    margin-top: 20px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* スマートフォンでのバイブレーション（CSSでは直接制御不可、JavaScriptで実装） */
+/* バイブレーションを促すような視覚的なフィードバックをCSSで表現する例 */
+.vibrate-effect {
+    animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both infinite;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.2em;
+    }
+    #weather-info p, #warning-message, #advice-message {
+        font-size: 1.2em;
+    }
+}
 
